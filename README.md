@@ -4,7 +4,7 @@
 
 Personal time-series forecasting experiments on New South Wales electricity: synthetic load, Ausgrid solar-home meters, and AEMO NSW1 demand / price.
 
-Code is MIT (`dimnoll`). CSV and zip files stay out of git; fetch or generate them with `scripts/fetch_data.py`. A GitHub Release can hold a frozen `data-pack.zip`.
+Code is MIT (`dimnoll`). CSV and zip files stay out of git; fetch or generate them with `scripts/fetch_data.py`. Datasets for tag `data-v1` are on the GitHub Release.
 
 Earlier public copy: https://github.com/dimnoll/TimeSeriesForecasting  
 That repository is being made private. Its commits used a personal email, and it stored the datasets in git.
@@ -33,15 +33,18 @@ requirements-torch.txt
 | `th-nsw-solar-home` | Ausgrid *Solar home electricity data*, 1 Jul 2012 – 30 Jun 2013 (`2012-2013 Solar home electricity data v2`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Ausgrid; historically listed on [Data.NSW](https://data.nsw.gov.au/). Paper: Ratnam et al., *International Journal of Sustainable Energy*, 2017 |
 | `th-nsw-demand-price` | `python scripts/fetch_data.py --aemo` then `data_preprocess.py` | [AEMO aggregated price and demand](https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/aggregated-data). Attribute AEMO as the author of that material |
 
-Ausgrid no longer hosts that zip. A CC BY 4.0 copy can live on this machine and later on a Release; it does not go into git. Put the zip (or unzipped CSV) in `th-nsw-solar-home/`, or unpack a Release pack.
+Ausgrid no longer hosts that zip. A CC BY 4.0 copy is on Release `data-v1`, not in git:
 
-After a `data-v1` Release exists:
+https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/2012-2013.Solar.home.electricity.data.v2.zip
+
+https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/data-pack.zip
 
 ```text
 python scripts/fetch_data.py --from-release
+python scripts/fetch_data.py --solar
 ```
 
-`python scripts/fetch_data.py --list-sources` prints the URLs.
+The first unpacks the pack (Ausgrid zip plus preprocessed tables). The second writes only the Ausgrid zip into `th-nsw-solar-home/` under the original filename (spaces, not dots). `python scripts/fetch_data.py --list-sources` prints the other URLs.
 
 ### Models
 
@@ -73,7 +76,7 @@ Then run preprocess and model scripts from each subfolder, as those files expect
 
 个人时序预测实验：合成负荷、Ausgrid 光伏户表、AEMO NSW1 负荷与电价。
 
-代码 MIT，著作权人 **dimnoll**。CSV / zip 不进 git，用 `scripts/fetch_data.py` 生成、下载或解开 Release。
+代码 MIT，著作权人 **dimnoll**。CSV / zip 不进 git，用 `scripts/fetch_data.py` 生成、下载或解开 Release `data-v1`。
 
 先前的公开副本：https://github.com/dimnoll/TimeSeriesForecasting  
 该仓库将改为私有：提交记录里有个人邮箱，而且数据集进了 git。
@@ -81,7 +84,9 @@ Then run preprocess and model scripts from each subfolder, as those files expect
 ### 数据（不提交）
 
 - 合成负荷：`--synthetic`
-- 光伏户表：Ausgrid 2012–2013，CC BY 4.0。官网 zip 已下线；本机或 Release 可保留一份，不进 git
+- 光伏户表：Ausgrid 2012–2013，CC BY 4.0。官网 zip 已下线；Release `data-v1` 有一份，不进 git
+  https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/2012-2013.Solar.home.electricity.data.v2.zip
+  https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/data-pack.zip
 - 负荷电价：`--aemo` 拉 NSW1 月文件，再跑 `data_preprocess.py`；须署名 AEMO
 
 `th-nsw-demand-price` 用过去一周（336 个半小时）预测未来 48 个半小时的 `TOTALDEMAND` 与 `RRP`。

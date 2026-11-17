@@ -4,8 +4,9 @@ Run from the repository root after the files exist locally:
 
     python scripts/pack_data.py
 
-Attach the zip to a `data-v1` Release. Training scripts still read the
-unpacked paths; the zip is only a distribution mirror.
+The published pack is:
+https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/data-pack.zip
+Training scripts still read the unpacked paths.
 """
 
 from __future__ import annotations

@@ -10,7 +10,9 @@ Zip and CSV files are **not in git**. See the repository root `README.md` and `p
 
 Ausgrid *Solar home electricity data*, 1 July 2012 – 30 June 2013 (`2012-2013 Solar home electricity data v2`). Historically listed on Data.NSW. Ausgrid no longer hosts the zip on their current site.
 
-Place the zip (or unzipped CSV) in this folder, then run `data_preprocess.py` to write `data_daily_long.csv`.
+From the repository root, `python scripts/fetch_data.py --solar` writes the zip into this folder (original filename, with spaces). Then run `data_preprocess.py` to write `data_daily_long.csv`.
+
+https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/2012-2013.Solar.home.electricity.data.v2.zip
 
 ### License
 
@@ -71,7 +73,9 @@ zip / CSV **不进 git**。见仓库根 `README.md` 与 `python scripts/fetch_da
 
 ### 数据源
 
-Ausgrid *Solar home electricity data*（2012-07-01 至 2013-06-30）。曾挂在 Data.NSW；Ausgrid 现行站点已不提供 zip。把 zip 或解压后的 CSV 放到本目录，再跑 `data_preprocess.py`。
+Ausgrid *Solar home electricity data*（2012-07-01 至 2013-06-30）。曾挂在 Data.NSW；Ausgrid 现行站点已不提供 zip。仓库根目录运行 `python scripts/fetch_data.py --solar`，再跑 `data_preprocess.py`。
+
+https://github.com/dimnoll/nsw-time-series-forecasting/releases/download/data-v1/2012-2013.Solar.home.electricity.data.v2.zip
 
 ### 授权协议
 
