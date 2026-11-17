@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+*.egg-info/
+
+# Datasets: generate, download, or unpack a Release. Do not commit.
+*.csv
+*.zip
+data-pack.zip
+
+th-nsw-solar-home/model/
+th-nsw-solar-home/spline_csv/
+th-nsw-solar-home/spline_plots/
+th-nsw-demand-price/data_csvs/
+th-nsw-demand-price/data_processed/

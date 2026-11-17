@@ -1,0 +1,11 @@
+numpy
+pandas
+scikit-learn
+torch
+matplotlib
+seaborn
+xgboost
+tqdm
+itransformer
+# optional, only for the KAN scripts in th-nsw-solar-home:
+# pykan
